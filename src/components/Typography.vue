@@ -1,7 +1,6 @@
 <template lang="pug">
 component(
   :is="tag"
-  :class="[_typographyStyleClass]"
   ) {{text}}
 </template>
 <script>
@@ -27,22 +26,6 @@ export default {
     text: {
       type: String,
       default: () => ""
-    },
-    typographyStyle: {
-      type: String,
-      default: () => ""
-    }
-  },
-  computed: {
-    _typographyStyleClass: function() {
-      let newTypographyClass = "";
-      const typographyClass = "typography";
-      if (this.typographyStyle) {
-        newTypographyClass = `${typographyClass}-${this.typographyStyle}`;
-      } else {
-        return Error;
-      }
-      return newTypographyClass;
     }
   }
 };

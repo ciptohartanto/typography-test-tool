@@ -6,6 +6,7 @@
       typography(
         :text="text" tag="h3"
         :style="{fontSize: fontsize + 'px', lineHeight: lineheight + 'em', fontWeight: weight}"
+        :class="_theLangClass"
         )
 
     .options
@@ -44,7 +45,6 @@ export default {
       type: String,
       default: ""
     },
-
     fontsize: {
       type: Number,
       default: 18
@@ -56,12 +56,21 @@ export default {
     pos: {
       type: Number,
       default: 24
+    },
+    typographyLang: {
+      type: String,
+      default: ''
     }
   },
   data() {
     return {
       weight: "normal"
     };
+  },
+  computed: {
+   _theLangClass: function() {
+      return `font--${this.typographyLang}`
+   }
   }
 };
 </script>
@@ -102,4 +111,20 @@ export default {
   font-weight: bold
 .italic
   font-style: italic
+  
+.font--kr
+  font-family: 'Apple SD Gothic Neo'
+  
+.font--en
+  font-family: 'SF Pro', 'sfpro'
+
+.font--jp
+  font-family: 'Hiragino Sans'
+  
+.font--zh
+  font-family: 'PingFang TC'
+  
+.font--th
+  font-family: 'Thonburi'
+
 </style>
