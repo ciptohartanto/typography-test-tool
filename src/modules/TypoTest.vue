@@ -116,7 +116,7 @@ export default {
   font-family: 'Apple SD Gothic Neo'
   
 .font--en
-  font-family: 'SF Pro', 'sfpro'
+  font-family: '-apple-system', 'BlinkMacSystemFont'
 
 .font--jp
   font-family: 'Hiragino Sans'
